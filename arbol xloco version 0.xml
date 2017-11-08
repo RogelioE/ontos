@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<xloco>
+    <usuario nbusuario="Rene">
+        <ontologia nbontologia="conta">
+            <ideal nbideal="calculador de isan">
+                <atributos>
+                    <atributo nbatributo="precio" tipo="decimal"/>
+                    <atributo nbatributo="liminf" tipo="decimal"/>
+                    <atributo nbatributo="limsup" tipo="decimal"/>
+                    <atributo nbatributo="tasa" tipo="decimal"/>
+                    <atributo nbatributo="fija" tipo="decimal"/>
+                    <atributo nbatributo="isan" tipo="decimal"/>
+                </atributos>
+<metodos>
+  <metodo><nbmetodo>calcular isan</nbmetodo>
+  <asignacion>
+    <atributo>precio</atributo>
+    <operando>250</operando>
+  </asignacion>
+  <decision>
+    <condicion>precio menorque 200 </condicion>
+    <verdadero>
+       <metodo><nbmetodo>segmento 1</nbmetodo>
+         <asignacion>
+           <atributo>tasa</atributo>
+           <operando>0.02</operando>
+         </asignacion>
+         <asignacion>
+           <atributo>cuota</atributo>
+           <operando>0</operando>
+         </asignacion>
+       </metodo>
+    </verdadero>
+    <falso>
+      <metodo><nbmetodo>prueba 2</nbmetodo>
+         <decision>
+           <condicion>precio menorque 300 </condicion>
+               <verdadero> 
+                  <metodo><nbmetodo>segmento 2</nbmetodo>
+                      <asignacion>
+                         <atributo>tasa</atributo>
+                         <operando>0.05</operando>
+                      </asignacion>
+                      <asignacion>
+                        <atributo>cuota</atributo>
+                        <operando>3</operando>
+                      </asignacion>
+                  </metodo>
+               </verdadero>
+               <falso>
+                  <metodo><nbmetodo>segmento 3</nbmetodo>
+                      <asignacion>
+                         <atributo>tasa</atributo>
+                         <operando>0.07</operando>
+                      </asignacion>
+                      <asignacion>
+                        <atributo>cuota</atributo>
+                        <operando>5</operando>
+                      </asignacion>
+                  </metodo>
+               </falso>
+       </decision>
+  </metodo>
+</falso>
+</decision>
+</metodo>
+</metodos>            </ideal>
+        </ontologia>
+    </usuario>
+</xloco>
